@@ -38,7 +38,6 @@ size_t u8to32(const char* u8str, char32_t* u32str)
 {
     size_t bytelen = strlen(u8str);
     size_t runelen = u8strlen(u8str);
-    
 
     for(size_t i=0;i<runelen;i++)
     {
@@ -87,20 +86,20 @@ size_t u32to8(const char32_t* u32str, char* u8str)
     {
         if(u32str[i] >= FOUR_BYTES) 
         {
-            *u8str++ = u32str[i] >> 24;
-            *u8str++ = u32str[i] >> 16;
-            *u8str++ = u32str[i] >> 8;
+            *u8str++ = (u32str[i] >> 24);
+            *u8str++ = (u32str[i] >> 16);
+            *u8str++ = (u32str[i] >> 8);
             *u8str++ = u32str[i];
         } 
         else if(u32str[i] >= THREE_BYTES)
         {
-            *u8str++ = u32str[i] >> 16;
-            *u8str++ = u32str[i] >> 8;
-            *u8str++ = u32str[i];
+            *u8str++ = (u32str[i] >> 16); 
+            *u8str++ = (u32str[i] >> 8); 
+            *u8str++ = u32str[i]; 
         }
         else if(u32str[i] >= TWO_BYTES)
         {
-            *u8str++ = u32str[i] >> 8;
+            *u8str++ = (u32str[i] >> 8); 
             *u8str++ = u32str[i];
         }
         else *u8str++ = u32str[i];

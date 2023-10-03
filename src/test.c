@@ -7,9 +7,9 @@
 
 int main()
 {
-    char* s = "João Paulo Lazzarini Cyrino Análise Sintática";
-    assert(strlen(s) == 48);
-    assert(u8strlen(s) == 45);
+    char* s = "我是老师不是中文";
+    assert(strlen(s) == 24);
+    assert(u8strlen(s) == 8);
     
     char32_t* u32 = malloc(5 * sizeof(char32_t));
     char* u8;
@@ -21,5 +21,7 @@ int main()
     assert(strcmp(u8,s) == 0);
     free(u32); u32 = NULL;
     free(u8); u8 = NULL;
+
+    printf("All assertions passed!\n");
     return 0;
 }
