@@ -1,3 +1,14 @@
+/* CU32
+ * Rotinas para conversão de strings em utf8 para
+ * strings de caracteres de largura fixa de 32bits.
+ * Não há conversão garantida para utf32 no momento.
+ * Use para facilitar acesso randômico a caracteres 
+ * unicode internamente ao programa.
+ * 
+ * Testado em GCC 13.2, C11
+ * Autor: João Paulo Lazzarini Cyrino
+ * Data 03.10.2023
+ */
 #include "cu32.h"
 #include <uchar.h>
 #include <string.h>
