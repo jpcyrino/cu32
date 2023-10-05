@@ -7,7 +7,7 @@
  * 
  * Testado em GCC 13.2, C11
  * Autor: João Paulo Lazzarini Cyrino
- * Data 03.10.2023
+ * Data 05.10.2023
  */
 
 #ifndef __CU32_H__
@@ -31,6 +31,12 @@ size_t u32strlen(const char32_t* u32str);
 // u32to8 abaixo.
 // u32str = string padrão C codificada em caracteres de 32bits
 size_t u32strmblen(const char32_t* u32str);
+
+// Copia uma string de caracteres de 32bits para um buffer de caracteres
+// de 32bits. Interface semelhante a strcpy.
+// dest = buffer de caracteres de 32bits.
+// src = string a ser copiada
+void u32strcpy(char32_t* dest, const char32_t* src);
 
 // Converte uma string em UTF8 em uma string de caracteres
 // de largura fixa de 32bits. 

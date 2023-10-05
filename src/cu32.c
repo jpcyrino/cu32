@@ -7,7 +7,7 @@
  * 
  * Testado em GCC 13.2, C11
  * Autor: João Paulo Lazzarini Cyrino
- * Data 03.10.2023
+ * Data 05.10.2023
  */
 #include "cu32.h"
 #include <uchar.h>
@@ -43,6 +43,15 @@ size_t u32strlen(const char32_t* u32str)
     size_t len = 0;
     while(*u32str++) len++;
     return len;
+}
+
+
+void u32strcpy(char32_t* dest, const char32_t* src)
+{
+    for(size_t i=0;i<u32strlen(src);i++)
+    {
+        dest[i] = src[i];
+    }
 }
 
 size_t u8to32(const char* u8str, char32_t* u32str)

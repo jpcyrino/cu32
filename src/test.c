@@ -20,6 +20,11 @@ int main()
     char* u8;
     u8to32(s,u32);
 
+    // Copia string u32 para string u32n
+    char32_t* u32n = malloc((u32strlen(u32) + 1) * sizeof(char32_t));
+    u32strcpy(u32n,u32);
+    assert(strcmp((char*) u32n, (char*) u32) == 0);
+
     // Converte string u32 em string codificada em utf8
     size_t mbstrlen = u32strmblen(u32);
     u8 = malloc((mbstrlen + 1) * sizeof(char));
@@ -32,6 +37,7 @@ int main()
     assert(strcmp(u8,s) == 0);
 
     // Liberar memória
+    free(u32n); u32n = NULL;
     free(u32); u32 = NULL;
     free(u8); u8 = NULL;
 
