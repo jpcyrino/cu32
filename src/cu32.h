@@ -38,6 +38,19 @@ size_t u32strmblen(const char32_t* u32str);
 // src = string a ser copiada
 void u32strcpy(char32_t* dest, const char32_t* src);
 
+// Copia os n primeiros caracteres de uma string de caracteres de 32bits
+// para um buffer de caracteres de 32bits. Interface semelhante a strncpy.
+// dest = buffer de caracteres de 32bits.
+// src = string a ser copiada
+// n = número de caracteres a serem copiados
+void u32strncpy(char32_t* dest, const char32_t* src, size_t n);
+
+// Verifica igualdade entre strings de 32bits. Retorna 0 se diferente e 1
+// se igual.
+// str_a = primeira string para comparação
+// str_b = segunda string para comparação
+int8_t u32streq(const char32_t* str_a, const char32_t* str_b);
+
 // Converte uma string em UTF8 em uma string de caracteres
 // de largura fixa de 32bits. 
 // u8str = string padrão C codificada em UTF8

@@ -52,6 +52,27 @@ void u32strcpy(char32_t* dest, const char32_t* src)
     {
         dest[i] = src[i];
     }
+    dest[u32strlen(src)] = '\0';
+}
+
+void u32strncpy(char32_t* dest, const char32_t* src, size_t n)
+{
+    for(size_t i=0;i<n;i++)
+    {
+        dest[i] = src[i];
+    }
+    dest[n] = '\0';
+}
+
+int8_t u32streq(const char32_t* str_a, const char32_t* str_b)
+{
+    size_t len_a = u32strlen(str_a);
+    if(len_a != u32strlen(str_b)) return 0;
+    for(size_t i=0;i<len_a;i++)
+    {
+        if(str_a[i] != str_b[i]) return 0;
+    }
+    return 1;
 }
 
 size_t u8to32(const char* u8str, char32_t* u32str)

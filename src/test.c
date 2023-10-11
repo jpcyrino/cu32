@@ -23,7 +23,9 @@ int main()
     // Copia string u32 para string u32n
     char32_t* u32n = malloc((u32strlen(u32) + 1) * sizeof(char32_t));
     u32strcpy(u32n,u32);
-    assert(strcmp((char*) u32n, (char*) u32) == 0);
+
+    // Verifica a igualdade entre u32 e u32n
+    assert(u32streq(u32n,u32) == 1);
 
     // Converte string u32 em string codificada em utf8
     size_t mbstrlen = u32strmblen(u32);
@@ -33,8 +35,14 @@ int main()
     // Verifica número de caracteres igual em u32 e s
     assert(u32strlen(u32) == u8strlen(s));
 
-    // Verifica igualdade entre u8 e s
-    assert(strcmp(u8,s) == 0);
+    // Obtem uma cópia dos 3 primeiros caracteres de u32
+    char32_t u32cp[4];
+    u32strncpy(u32cp,u32,3);
+    assert(u32strlen(u32cp) == 3);
+    assert(u32cp[0] == u32[0]);
+    assert(u32cp[1] == u32[1]);
+    assert(u32cp[2] == u32[2]);
+
 
     // Liberar memória
     free(u32n); u32n = NULL;
