@@ -42,6 +42,7 @@ int main()
     assert(u32cp[0] == u32[0]);
     assert(u32cp[1] == u32[1]);
     assert(u32cp[2] == u32[2]);
+    assert(u32cp[3] == 0);
 
 
     // Liberar memória

@@ -7,7 +7,7 @@
  * 
  * Testado em GCC 13.2, C11
  * Autor: João Paulo Lazzarini Cyrino
- * Data 05.10.2023
+ * Data 11.10.2023
  */
 #include "cu32.h"
 #include <uchar.h>
