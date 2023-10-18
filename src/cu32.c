@@ -54,11 +54,7 @@ size_t u32strlen(const char32_t* u32str)
 
 void u32strcpy(char32_t* dest, const char32_t* src)
 {
-    for(size_t i=0;i<u32strlen(src);i++)
-    {
-        dest[i] = src[i];
-    }
-    dest[u32strlen(src)] = '\0';
+    for(size_t i=0;(dest[i]=src[i]);i++);
 }
 
 void u32strncpy(char32_t* dest, const char32_t* src, size_t n)
